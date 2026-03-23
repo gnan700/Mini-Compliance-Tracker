@@ -64,7 +64,7 @@ function Dashboard() {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('https://calendar-backend-80yo.onrender.com/api/events');
+      const response = await axios.get('https://mini-compliance-tracker-p5vl.onrender.com/api/events');
       setEvents(response.data);
       setLoading(false);
     } catch (error) {
@@ -75,7 +75,7 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://calendar-backend-80yo.onrender.com/api/events/${id}`);
+      await axios.delete(`https://mini-compliance-tracker-p5vl.onrender.com/api/events/${id}`);
       setEvents(events.filter(event => event._id !== id));
       setDeleteDialogOpen(false);
     } catch (error) {
@@ -88,7 +88,7 @@ function Dashboard() {
     const newStatus = completed ? 'Complete' : 'Over Due';
     try {
       await axios.patch(
-        `https://calendar-backend-80yo.onrender.com/api/events/${eventToConfirm._id}`,
+        `https://mini-compliance-tracker-p5vl.onrender.com/api/events/${eventToConfirm._id}`,
         { status: newStatus }
       );
       await fetchEvents();
