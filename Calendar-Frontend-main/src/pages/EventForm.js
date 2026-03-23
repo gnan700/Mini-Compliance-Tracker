@@ -71,7 +71,7 @@ function EventForm() {
 
   const fetchEvent = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || 'https://calendar-backend-80yo.onrender.com'}/api/events/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || 'https://mini-compliance-tracker-p5vl.onrender.com'}/api/events/${id}`);
       const eventData = response.data;
       setEvent({
         ...eventData,
@@ -96,10 +96,10 @@ function EventForm() {
     }
     try {
       if (id) {
-        await axios.put(`${process.env.REACT_APP_API_URL || 'https://calendar-backend-80yo.onrender.com'}/api/events/${id}`, event);
+        await axios.put(`${process.env.REACT_APP_API_URL || 'https://mini-compliance-tracker-p5vl.onrender.com'}/api/events/${id}`, event);
         setSnackbar({ open: true, message: 'Event updated successfully!', severity: 'success' });
       } else {
-        await axios.post(`${process.env.REACT_APP_API_URL || 'https://calendar-backend-80yo.onrender.com'}/api/events`, event);
+        await axios.post(`${process.env.REACT_APP_API_URL || 'https://mini-compliance-tracker-p5vl.onrender.com'}/api/events`, event);
         setSnackbar({ open: true, message: 'Event created successfully!', severity: 'success' });
       }
       setTimeout(() => navigate('/'), 1200);
