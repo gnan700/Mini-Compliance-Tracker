@@ -50,7 +50,7 @@ function Calendar() {
   const fetchEvents = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL || 'https://calendar-backend-80yo.onrender.com'}/api/events`
+        `${process.env.REACT_APP_API_URL || 'https://mini-compliance-tracker-p5vl.onrender.com'}/api/events`
       );
       const formattedEvents = response.data.map(event => ({
         id: event._id,
