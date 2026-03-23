@@ -9,7 +9,6 @@ import {
   Container,
   Paper,
   Box,
-  Button,
   ToggleButton,
   ToggleButtonGroup,
   Tooltip,
@@ -18,13 +17,12 @@ import {
   Typography,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import axios from 'axios';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './CalendarCustom.css';
 
 const locales = {
-  ' // <-- Add this line for custom CSSen-US': require('date-fns/locale/en-US'),
+  'en-US': require('date-fns/locale/en-US'),
 };
 
 
@@ -41,7 +39,7 @@ function Calendar() {
   const [view, setView] = useState('month');
   const [date, setDate] = useState(new Date()); // <-- Add this line
   const [events, setEvents] = useState([]);
-  const [hoveredEvent, setHoveredEvent] = useState(null);
+  
 
   useEffect(() => {
     fetchEvents();
